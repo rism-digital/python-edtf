@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719488308264,
-  "repoUrl": "https://github.com/ixc/python-edtf",
+  "lastUpdate": 1723562179193,
+  "repoUrl": "https://github.com/rism-digital/python-edtf",
   "entries": {
     "Benchmark": [
       {
@@ -9572,6 +9572,180 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0038441798996662548",
             "extra": "mean: 11.08822609195229 msec\nrounds: 87"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "rism-digital",
+            "username": "rism-digital"
+          },
+          "committer": {
+            "name": "rism-digital",
+            "username": "rism-digital"
+          },
+          "id": "51255e3e0d82ed374b91cd10a96bf1afede056d2",
+          "message": "Benchmarks",
+          "timestamp": "2021-04-13T12:49:11Z",
+          "url": "https://github.com/rism-digital/python-edtf/pull/1/commits/51255e3e0d82ed374b91cd10a96bf1afede056d2"
+        },
+        "date": 1723562178640,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[23rd Dynasty-None]",
+            "value": 5822325.497678298,
+            "unit": "iter/sec",
+            "range": "stddev: 9.352980007906646e-8",
+            "extra": "mean: 171.75267861591706 nsec\nrounds: 20346"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[January 2008-2008-01]",
+            "value": 5848202.526102233,
+            "unit": "iter/sec",
+            "range": "stddev: 1.0475036048432619e-8",
+            "extra": "mean: 170.9927102450212 nsec\nrounds: 3704"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[ca1860-1860~]",
+            "value": 5827148.689142801,
+            "unit": "iter/sec",
+            "range": "stddev: 1.774069049854196e-8",
+            "extra": "mean: 171.61051714077755 nsec\nrounds: 6637"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[uncertain: approx 1862-1862%]",
+            "value": 5762032.935966821,
+            "unit": "iter/sec",
+            "range": "stddev: 1.594507885905973e-8",
+            "extra": "mean: 173.54985837688693 nsec\nrounds: 4954"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[January-XXXX-01]",
+            "value": 5806692.012868723,
+            "unit": "iter/sec",
+            "range": "stddev: 1.1291642768885588e-8",
+            "extra": "mean: 172.21509213573094 nsec\nrounds: 6732"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[Winter 1872-1872-24]",
+            "value": 5680630.838942914,
+            "unit": "iter/sec",
+            "range": "stddev: 1.9957046404006622e-7",
+            "extra": "mean: 176.03678682033245 nsec\nrounds: 6062"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[before approx January 18 1928-/1928-01-18~]",
+            "value": 5545609.428652979,
+            "unit": "iter/sec",
+            "range": "stddev: 2.6336213495278343e-7",
+            "extra": "mean: 180.32283247954922 nsec\nrounds: 3968"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[birthday in 1872-1872]",
+            "value": 5731426.851419629,
+            "unit": "iter/sec",
+            "range": "stddev: 3.4809092803789004e-8",
+            "extra": "mean: 174.4766226497871 nsec\nrounds: 5069"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[1270 CE-1270]",
+            "value": 5812035.750623879,
+            "unit": "iter/sec",
+            "range": "stddev: 3.758223551490672e-8",
+            "extra": "mean: 172.05675307359513 nsec\nrounds: 24774"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[2nd century bce--01XX]",
+            "value": 5804134.785010643,
+            "unit": "iter/sec",
+            "range": "stddev: 7.402261008825971e-8",
+            "extra": "mean: 172.29096791179467 nsec\nrounds: 18844"
+          },
+          {
+            "name": "edtf/natlang/tests.py::test_benchmark_natlang[1858/1860-[1858, 1860]]",
+            "value": 5681530.871514861,
+            "unit": "iter/sec",
+            "range": "stddev: 1.4469134676527543e-8",
+            "extra": "mean: 176.00890017400735 nsec\nrounds: 9438"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[2001-02-03]",
+            "value": 150.9336108799082,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0005190941379175979",
+            "extra": "mean: 6.625429512818452 msec\nrounds: 39"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[2008-12]",
+            "value": 158.25272517495551,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0017617778026342112",
+            "extra": "mean: 6.319006506172042 msec\nrounds: 162"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[2008]",
+            "value": 188.0448154362703,
+            "unit": "iter/sec",
+            "range": "stddev: 0.001858222153226724",
+            "extra": "mean: 5.317881259741016 msec\nrounds: 154"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[-0999]",
+            "value": 189.2514553562375,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0012911870241100205",
+            "extra": "mean: 5.283975217615367 msec\nrounds: 193"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[2004-01-01T10:10:10+05:00]",
+            "value": 134.90027002314852,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0015236821774623206",
+            "extra": "mean: 7.412883605261892 msec\nrounds: 114"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[-2005/-1999-02]",
+            "value": 114.87802293205965,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0015476824822017684",
+            "extra": "mean: 8.704885185841098 msec\nrounds: 113"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[/2006]",
+            "value": 303.24144205838854,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0008366156404030241",
+            "extra": "mean: 3.297702296928967 msec\nrounds: 293"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[?2004-%06]",
+            "value": 208.27669819435894,
+            "unit": "iter/sec",
+            "range": "stddev: 0.001059099024882321",
+            "extra": "mean: 4.801305228426577 msec\nrounds: 197"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[[1667, 1760-12]]",
+            "value": 30.38369137057002,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000401654392411358",
+            "extra": "mean: 32.912393290323216 msec\nrounds: 31"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[Y3388E2S3]",
+            "value": 418.09492417601166,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00006331636729580883",
+            "extra": "mean: 2.39180134025979 msec\nrounds: 385"
+          },
+          {
+            "name": "edtf/parser/tests.py::test_benchmark_parser[2001-29]",
+            "value": 112.3821933156471,
+            "unit": "iter/sec",
+            "range": "stddev: 0.002076634987401737",
+            "extra": "mean: 8.89820682882836 msec\nrounds: 111"
           }
         ]
       }
