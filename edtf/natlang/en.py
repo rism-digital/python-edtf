@@ -1,6 +1,5 @@
 """Utilities to derive an EDTF string from an (English) natural language string."""
 
-import functools
 import re
 from datetime import datetime
 from typing import Optional
@@ -15,7 +14,6 @@ from edtf import appsettings
 DEFAULT_DATE_1 = datetime(1234, 1, 1, 0, 0)
 DEFAULT_DATE_2 = datetime(5678, 10, 10, 0, 0)
 
-SHORT_YEAR_RE = re.compile(r"(-?)([\du])([\dxu])([\dxu])([\dxu])")
 LONG_YEAR_RE = re.compile(r"y(-?)([1-9]\d\d\d\d+)")
 CENTURY_RE = re.compile(r"(\d{1,2})(c\.?|(st|nd|rd|th) century)\s?(ad|ce|bc|bce)?")
 CENTURY_RANGE = re.compile(r"\b(\d\d)(th|st|nd|rd|)-(\d\d)(th|st|nd|rd) [cC]")
@@ -27,7 +25,7 @@ SLASH_YEAR = re.compile(r"(\d\d\d\d)/(\d\d\d\d)")
 BEFORE_CHECK = re.compile(r"\b(?:before|earlier|avant)\b")
 AFTER_CHECK = re.compile(r"\b(after|since|later|aprés|apres)\b")
 APPROX_CHECK = re.compile(
-    r"\b(?:ca?\.? ?\d{4}|circa|approx|approximately|around|about|~\d{3,4})|(?:^~)"
+    r"\b(?:ca?\.? ?\d{4}|circa|approx|approximately|around|about|~\d{3,4})|^~"
 )
 UNCERTAIN_CHECK = re.compile(r"\b(?:uncertain|possibly|maybe|guess|\d{3,4}\?)")
 UNCERTAIN_REPL = re.compile(r"(\d{4})\?")
@@ -53,7 +51,7 @@ MENTIONS_DAY = re.compile(r"\bday\b.+(in|during)\b")
 REJECT_RULES = re.compile(r".*dynasty.*")  # Don't parse '23rd Dynasty' to 'uuuu-uu-23'
 
 
-@functools.lru_cache
+# @functools.lru_cache
 def text_to_edtf(text: str) -> Optional[str]:
     """
     Generate EDTF string equivalent of a given natural language date string.
@@ -104,7 +102,7 @@ def text_to_edtf(text: str) -> Optional[str]:
                     r2 = text_to_edtf_date(d2)
 
                     if r1 and r2:
-                        result = r1 + "/" + r2
+                        result = f"{r1}/{r2}"
                         return result
 
                 # is it an either/or year "1838/1862" - that has a different
@@ -134,7 +132,7 @@ def text_to_edtf(text: str) -> Optional[str]:
     return result
 
 
-@functools.lru_cache
+# @functools.lru_cache
 def text_to_edtf_date(text: str) -> Optional[str]:
     """
     Return EDTF string equivalent of a given natural language date string.
@@ -173,7 +171,7 @@ def text_to_edtf_date(text: str) -> Optional[str]:
     # detect CE/BCE year form
     is_ce = re.findall(CE_RE, t)
     if is_century:
-        result = "%02dXX" % (int(is_century[0][0]) - 1,)
+        result = f"{int(is_century[0][0]) - 1:02d}XX"
         is_approximate = is_approximate or re.findall(APPROX_CENTURY_RE, t)
         is_uncertain = is_uncertain or re.findall(UNCERTAIN_CENTURY_RE, t)
 
@@ -184,7 +182,7 @@ def text_to_edtf_date(text: str) -> Optional[str]:
             pass
 
     elif is_ce:
-        result = "%04d" % (int(is_ce[0][0]))
+        result = f"{int(is_ce[0][0]):04d}"
         is_approximate = is_approximate or re.findall(APPROX_CE_RE, t)
         is_uncertain = is_uncertain or re.findall(UNCERTAIN_CE_RE, t)
 
